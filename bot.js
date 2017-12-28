@@ -27,15 +27,15 @@ bot.on('ready', function (evt) {
 
 bot.on('message', function (user, userID, channelID, message, evt) {
     // Our bot needs to know if it needs to execute a command
-    // for this script it will listen for messages that will start with `!`
-    if (message.substring(0, 1) == '!') {
+    // for this script it will listen for messages that will start with `bare`
+    if (message.substring(0, 1) == 'bare') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
 
         args = args.splice(1);
 
         switch(cmd) {
-            // !ping
+            // bareping
             case 'ping':
                 bot.sendMessage({ to: channelID, message: 'Pong!' });
             break;
